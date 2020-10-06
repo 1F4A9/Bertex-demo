@@ -1,0 +1,16 @@
+{
+  "name": "bertex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "sass --watch styles/main.scss styles/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.26.11",
+    "typography": "^0.16.19",
+    "typography-theme-fairy-gates": "^0.16.19"
+  }
+}
