@@ -98,29 +98,22 @@ html {
   }
 
   &__about {
-    
     padding-top: 10vh;
     height: 100vh;
+  }
 
-    
+  &__service {
+    background-color: #B8DBFF;
   }
   
   &__service__article {
     position: relative;
     padding-top: 10vh;
     height: 100%;
-    background-color: #B8DBFF;
 
     &__service__article:last-child {
       padding-bottom: 10px;
     }
-  }
-
-  &__service__article {
-    position: relative;
-    padding-top: 10vh;
-    height: 100%;
-    background-color: #B8DBFF;
 
     svg {
       position: absolute;
@@ -130,33 +123,52 @@ html {
 }
 
 .footer {
-  height: 100vh;
   width: 100%;
   display: flex;
-  
-  &__divider {
-    
-    &--left {
-      background-color: dodgerblue;
-      flex: 0 0 70%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  &__box {
+    padding: 2rem;
+
+    h3 {
+      border-bottom: 1px solid black;
+      padding-bottom: 0.725rem;
+      margin-bottom: 0.725rem;
     }
-    
-    &--right {
-      background-color: transparent;
-      flex: 0 0 30%;
+
+    &--align {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      margin: 0.2rem 0rem;
 
-      &__column {
-        &:first-child {
-          flex: 0 0 35%;
-          background-color: #B8DBFF;
-        }
-
-        &:last-child {
-          flex: 0 0 65%;
-        }
+      svg {
+        margin-right: 0.4rem;
       }
     }
+  }
+}
+
+$break-small: 480px;
+$break-medium: 840px;
+$break-large: 1150px;
+
+@media screen and (max-width: $break-medium) {
+  .main article {
+    padding: 10vh 2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+  } 
+}
+
+@media screen and (min-width: $break-large) {
+  .main__about,
+  .main__service__article,
+  .footer {
+    margin: 0 auto;
+    width: $break-large;
   }
 }

@@ -80,20 +80,16 @@ html {
   padding-top: 10vh;
   height: 100vh;
 }
+.main__service {
+  background-color: #B8DBFF;
+}
 .main__service__article {
   position: relative;
   padding-top: 10vh;
   height: 100%;
-  background-color: #B8DBFF;
 }
 .main__service__article__service__article:last-child {
   padding-bottom: 10px;
-}
-.main__service__article {
-  position: relative;
-  padding-top: 10vh;
-  height: 100%;
-  background-color: #B8DBFF;
 }
 .main__service__article svg {
   position: absolute;
@@ -101,26 +97,45 @@ html {
 }
 
 .footer {
-  height: 100vh;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-.footer__divider--left {
-  background-color: dodgerblue;
-  flex: 0 0 70%;
+.footer__box {
+  padding: 2rem;
 }
-.footer__divider--right {
-  background-color: transparent;
-  flex: 0 0 30%;
+.footer__box h3 {
+  border-bottom: 1px solid black;
+  padding-bottom: 0.725rem;
+  margin-bottom: 0.725rem;
+}
+.footer__box--align {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  margin: 0.2rem 0rem;
 }
-.footer__divider--right__column:first-child {
-  flex: 0 0 35%;
-  background-color: #B8DBFF;
+.footer__box--align svg {
+  margin-right: 0.4rem;
 }
-.footer__divider--right__column:last-child {
-  flex: 0 0 65%;
+
+@media screen and (max-width: 840px) {
+  .main article {
+    padding: 10vh 2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1150px) {
+  .main__about,
+.main__service__article,
+.footer {
+    margin: 0 auto;
+    width: 1150px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
