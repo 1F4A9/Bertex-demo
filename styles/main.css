@@ -83,18 +83,17 @@ body {
   width: 90%;
   margin: 0 auto;
   height: 100%;
-  background-color: orange;
   box-sizing: border-box;
   margin-bottom: 100px;
   position: relative;
 }
 .header__intro__left {
   flex: 1;
-  background-color: #34a65f;
+  background-color: #7ca6a0;
 }
 .header__intro__right {
   flex: 1;
-  background-color: #e8ebe8;
+  background-color: #f2f2f2;
 }
 .header__intro h1 {
   position: absolute;
@@ -104,9 +103,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
+  color: #5f78b0;
 }
 .header__intro h1 span {
-  color: dodgerblue;
+  color: #7ca6a0;
 }
 
 @media screen and (max-width: 840px) {
@@ -138,6 +138,10 @@ body {
   }
   .header__nav__mobile h2 {
     margin: auto 0;
+  }
+  .header__nav__mobile h2 img {
+    width: 60%;
+    margin-bottom: 0.5rem;
   }
   .header__intro {
     width: 100%;
@@ -215,7 +219,7 @@ body {
   margin: 5px;
 }
 .main__service {
-  background-color: #B8DBFF;
+  background-color: #5f78b0;
 }
 .main__service__article:last-child {
   padding-bottom: 10vh;

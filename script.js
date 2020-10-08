@@ -27,6 +27,8 @@ const navSlide = () => {
   burger.addEventListener("click", () => {
     ul.classList.toggle("header__ul__open");
 
+    console.log(listItem)
+
     listItem.forEach((li, i) => {
       li.addEventListener("click", () => {
         ul.classList.remove("header__ul__open");
