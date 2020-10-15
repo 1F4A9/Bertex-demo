@@ -68,7 +68,7 @@ body {
   width: 100%;
 }
 .header__li a {
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: 100;
   letter-spacing: 3px;
   color: black;
@@ -241,15 +241,47 @@ body {
 }
 .main__service {
   background-color: #a9e3fe;
+  min-height: 100vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.main__service__article:last-child {
-  padding-bottom: 10vh;
-}
-.main__service__article {
-  position: relative;
-  height: 100%;
+.main__service__flex {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 2rem 2rem;
+}
+.main__service__flex__card {
+  flex: 0 0 30%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0px 12px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__service__flex__card__header {
+  padding-top: 1.45rem;
+  justify-self: flex-start;
+  flex: 0 0 20%;
+}
+.main__service__flex__card__header h4 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.main__service__flex__card svg {
+  flex: 0 0 20%;
+}
+.main__service__flex__card__footer {
+  flex: 1 0 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 840px) {
@@ -323,6 +355,14 @@ body {
 }
 
 @media screen and (max-width: 840px) {
+  .main__service__flex {
+    flex-direction: column;
+  }
+  .main__service__flex__card {
+    margin: 1.45rem 0;
+    width: 100%;
+  }
+
   .footer {
     flex-direction: column;
   }
@@ -330,6 +370,7 @@ body {
 @media screen and (min-width: 1150px) {
   .main__about,
 .main__service__article,
+.main__service__flex,
 .footer {
     margin: 0 auto;
     width: 1150px;

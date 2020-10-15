@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Work+Sans:wght@600&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/typography.css" />
   <link rel="stylesheet" href="./styles/main.css" />
@@ -93,64 +96,74 @@
       </svg>
     </section>
     <section class="main__service" id="service">
-      <h1>Våra produktionstjänster</h1>
-      <article class="main__service__article">
+      <h1>Tjänster</h1>
 
-        <h3>Singelinplastning</h3>
-        <p>
-          Bertex förfogar idag över sex (6) plastmaskiner. Maskinerna kan köra både tryckt (styrd) och otryckt
-          (transparent) plast och klarar alla de vanligaste förekommande mått och kvalitéer på trycksakerna.
-        </p>
-        <p>
-          Självklart är det inga problem med flera bilagor (även gimmicks/varuprov) och vi adresserar också på
-          plasten.
-        </p>
-        <p>Angående tryckt plastfilm hjälper vi gärna kunderna med olika förslag och idéer. </p>
-      </article>
-
-      <article class="main__service__article">
-        <h2>Ibladning</h2>
-        <p>
-          Vi har hög kapacitet avseende maskinell ibladning av diverse bilagor i trycksaker. Även inklistring av
-          bilagor går bra.
-        </p>
-        <p>Vi kan iblada både en eller flera bilagor samtidigt.</p>
-        <p>Adressering kan ske i samband med ibladning.</p>
-      </article>
-
-      <article class="main__service__article">
-        <h2>Inkjet-adressering</h2>
-        <p>
-          Bertex har nio (9) snabba inkjet-adresseringslinjer som kan adressera de flesta typer av trycksaker och
-          på
-          plastfilm. Alla Citymails och Postens regler för postsortering genomförs, detta gäller även för
-          adressering
-          till våra nordiska grannländer. Förutom adressering kan självklart annan textmassa inkas (exempelvis
-          portobeteckningar, avsändare och dylikt).
-        </p>
-      </article>
-
-      <article class="main__service__article">
-        <h2>Tabulatoradressering</h2>
-        <p>Gammaldags maskinell tabulatoradressering kan vi även hjälpa er med.</p>
-      </article>
-
-      <article class="main__service__article">
-        <h2>Banderollering</h2>
-        <p>Som ett av få Nordiska bolag kan vi erbjuda maskinell banderollering av tidningar.</p>
-      </article>
-
-      <article class="main__service__article">
-        <h2>Övrigt</h2>
-        <p>Efterbehandlingsutrustning (skärning och falsning) av löpande bana trycksaker.</p>
-        <p>Kuvertering.</p>
-        <p>Lagerhantering.</p>
-        <p>Packning, större utskick till företag osv.</p>
-        <p>Dataöverföring adressmaterial.</p>
-      </article>
+      <div class="main__service__flex">
+        <div class="main__service__flex__card">
+          <div class="main__service__flex__card__header">
+            <h4>Adressering och ibladning</h4>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-news" width="100" height="100"
+            viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />
+            <line x1="8" y1="8" x2="12" y2="8" />
+            <line x1="8" y1="12" x2="12" y2="12" />
+            <line x1="8" y1="16" x2="12" y2="16" />
+          </svg>
+          <div class="main__service__flex__card__footer">
+            <p>
+              Vi har mycket stor kapacitet för adressering och ibladning på de flesta varianter av trycksaker.
+            </p>
+            <p>
+              Självklart sköter vi också postsortering och porto-optimering.
+            </p>
+          </div>
+        </div>
+        <div class="main__service__flex__card">
+          <div class="main__service__flex__card__header">
+            <h4>Inplastning</h4>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="100" height="100"
+            viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" />
+            <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+            <rect x="7" y="13" width="10" height="8" rx="2" />
+          </svg>
+          <div class="main__service__flex__card__footer">
+            <p>
+              Vi singelinplastar trycksaker med antingen transparent eller tryckt plastfilm.
+            </p>
+            <p>
+              i kan adressera både på plasten eller på trycksaken.
+            </p>
+          </div>
+        </div>
+        <div class="main__service__flex__card">
+          <div class="main__service__flex__card__header">
+            <h4>Lager och logistik</h4>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-warehouse" width="100"
+            height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 21v-13l9-4l9 4v13" />
+            <path d="M13 13h4v8h-10v-6h6" />
+            <path d="M13 21v-9a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3" />
+          </svg>
+          <div class="main__service__flex__card__footer">
+            <p>
+              Vi lagrar, packar och distribuerar era trycksaker.
+            </p>
+          </div>
+        </div>
+      </div>
 
     </section>
-
 
   </main>
 
