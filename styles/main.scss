@@ -85,7 +85,7 @@ body {
     }
 
     a {
-      font-size: 25px;
+      font-size: 1.5rem;
       font-weight: 100;
       letter-spacing: 3px;
       color: black;
@@ -293,17 +293,63 @@ body {
 
   &__service {
     background-color: $light-blue;
+    min-height: 100vh;
     text-align: center;
-  }
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &__flex {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      padding: 2rem 2rem;
+  
+      &__card {
+        flex: 0 0 30%;
+  
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 0px 12px;
 
-  &__service__article:last-child {
-    padding-bottom: 10vh;
-  }
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 3px 3px -2px rgba(0, 0, 0, 0.20),
+        0 1px 8px 0 rgba(0, 0, 0, 0.12);
 
-  &__service__article {
-    position: relative;
-    height: 100%;
-    padding: 2rem 2rem;
+        min-height: 400px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__header {
+          padding-top: 1.45rem;
+          justify-self: flex-start;
+          flex: 0 0 20%;
+
+          h4 {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+          }
+        }
+
+        svg {
+          flex: 0 0 20%;
+        }
+        
+        
+        &__footer {
+          flex: 1 0 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+        }
+      }
+    }
+
   }
 }
 
@@ -391,6 +437,15 @@ body {
 }
 
 @media screen and (max-width: $break-medium) {
+  .main__service__flex {
+    flex-direction: column;
+    
+    &__card {
+      margin: 1.45rem 0;
+      width: 100%;
+    }
+  }
+
   .footer {
     flex-direction: column;
   }
@@ -399,6 +454,7 @@ body {
 @media screen and (min-width: $break-large) {
   .main__about,
   .main__service__article,
+  .main__service__flex,
   .footer {
     margin: 0 auto;
     width: $break-large;
