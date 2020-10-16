@@ -3,10 +3,12 @@ const navDrop = () => {
   const h1 = document.querySelector(".header__intro__text");
   const navLogo = document.querySelector(".navLogo");
 
+  let breakAt = window.innerHeight / 2;
+
   window.addEventListener("scroll", () => {
     let currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > 200) {
+    if (currentScrollPosition > breakAt * 2) {
       h1.style.display = "none";
       navLogo.style.display = "block";
       navLogo.style.width = "150px";
@@ -18,7 +20,13 @@ const navDrop = () => {
       // navLogo.style.backgroundColor = "red";
     } else {
       h1.style.display = "block";
-      navLogo.style.display = "none";
+
+      let maxWidth = 150;
+      maxWidth = maxWidth + currentScrollPosition - breakAt;
+
+      if (maxWidth < 151) {
+        navLogo.style.width = `calc(${maxWidth}px)`;
+      }
     }
 
     if (previousScrollPostition < currentScrollPosition) {
