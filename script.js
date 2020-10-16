@@ -1,10 +1,6 @@
 const navDrop = () => {
   let previousScrollPostition = window.pageYOffset;
 
-  // window.onscroll = () => {
-  //   console.log("SIMPLE FUNCTION", window.pageYOffset)
-  // }
-
   window.addEventListener("scroll", () => {
     let currentScrollPosition = window.pageYOffset;
 
@@ -22,19 +18,17 @@ navDrop();
 const navSlide = () => {
   const burger = document.querySelector(".header__nav__mobile__burger");
   const ul = document.querySelector(".header__ul");
-  const listItem = document.querySelectorAll(".header__li");
+  const listItems = document.querySelectorAll(".header__li");
 
   burger.addEventListener("click", () => {
     ul.classList.toggle("header__ul__open");
 
-    console.log(listItem)
-
-    listItem.forEach((li, i) => {
+    listItems.forEach((li, i) => {
       li.addEventListener("click", () => {
         ul.classList.remove("header__ul__open");
         burger.classList.remove("toggleBurger");
 
-        listItem.forEach((item) => {
+        listItems.forEach((item) => {
           item.style.animation = "";
         });
       });
