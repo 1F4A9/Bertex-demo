@@ -1,8 +1,25 @@
 const navDrop = () => {
   let previousScrollPostition = window.pageYOffset;
+  const h1 = document.querySelector(".header__intro__text");
+  const navLogo = document.querySelector(".navLogo");
 
   window.addEventListener("scroll", () => {
     let currentScrollPosition = window.pageYOffset;
+
+    if (currentScrollPosition > 200) {
+      h1.style.display = "none";
+      navLogo.style.display = "block";
+      navLogo.style.width = "150px";
+      navLogo.style.height = "50px";
+      navLogo.style.backgroundImage = "url('./assets/bertex_new.gif')";
+      navLogo.style.backgroundSize = "contain";
+      navLogo.style.backgroundRepeat = "no-repeat";
+      navLogo.style.backgroundPosition = "center";
+      // navLogo.style.backgroundColor = "red";
+    } else {
+      h1.style.display = "block";
+      navLogo.style.display = "none";
+    }
 
     if (previousScrollPostition < currentScrollPosition) {
       document.querySelector(".header__nav").style.top = "-10vh";
