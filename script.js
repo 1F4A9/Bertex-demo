@@ -3,10 +3,12 @@ const navDrop = () => {
   const h1 = document.querySelector(".header__intro__text");
   const navLogo = document.querySelector(".navLogo");
 
-  window.addEventListener("scroll", () => {
+  let breakpoint = window.innerHeight / 2;
+
+  let remove = window.addEventListener("scroll", () => {
     let currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > 200) {
+    if (currentScrollPosition > breakpoint * 2) {
       h1.style.display = "none";
       navLogo.style.display = "block";
       navLogo.style.width = "150px";
@@ -18,7 +20,19 @@ const navDrop = () => {
       // navLogo.style.backgroundColor = "red";
     } else {
       h1.style.display = "block";
-      navLogo.style.display = "none";
+      // navLogo.style.display = "none";
+
+      let maxWidth = 150;
+      maxWidth = maxWidth + currentScrollPosition - breakpoint;
+
+      if (maxWidth < 151) {
+        navLogo.style.width = `calc(${maxWidth}px)`;
+      }
+
+      // if (currentScrollPosition + 500 > breakpoint + 500) {
+      //   console.log(currentScrollPosition, currentScrollPosition - 380);
+      //   navLogo.style.width = `${currentScrollPosition - 383}px`;
+      // }
     }
 
     if (previousScrollPostition < currentScrollPosition) {
@@ -28,9 +42,21 @@ const navDrop = () => {
     }
 
     previousScrollPostition = currentScrollPosition;
+
+    const mediumScreenNavLogo = window.matchMedia("(max-width: 840px)");
+    if (mediumScreenNavLogo.matches) {
+      navLogo.style.display = "none";
+      h1.style.display = "none";
+    }
   });
+  const mediumScreenHeaderText = window.matchMedia("(max-width: 840px)");
+  if (mediumScreenHeaderText.matches) {
+    h1.style.display = "none";
+  }
 };
 navDrop();
+
+const MediaHeaderFix = (navLogo, h1) => {};
 
 const navSlide = () => {
   const burger = document.querySelector(".header__nav__mobile__burger");
