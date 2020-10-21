@@ -83,7 +83,7 @@ body {
       color: black;
       text-decoration: none;
       position: relative;
-​
+
       &::after {
         content: "";
         position: absolute;
@@ -216,6 +216,7 @@ body {
     }
   }
 }
+
 @keyframes bounce {
   0%,
   20%,
@@ -263,7 +264,7 @@ body {
     padding-bottom: 10rem;
     padding-top: 10vh;
     position: relative;
-​
+
     &__left {
       width: 48%;
       height: 100%;
@@ -271,20 +272,20 @@ body {
       justify-content: center;
       align-items: center;
       padding: 0 2rem;
-​
+
       h2 {
         font-size: clamp(6rem, 10vw, 8rem);
         margin: 0;
         padding: 0;
       }
     }
-​
+
     &__divider {
       width: 2px;
       height: 80vh;
       background-color: black;
     }
-​
+
     &__right {
       padding: 0 2rem;
       width: 48%;
@@ -292,7 +293,7 @@ body {
       display: flex;
       justify-content: center;
       flex-direction: column;
-​
+
       p {
         margin: 5px;
         line-height: 2rem;
@@ -303,7 +304,7 @@ body {
       }
     }
   }
-​
+
   &__service {
     min-height: 120vh;
     text-align: center;
@@ -314,17 +315,17 @@ body {
     justify-content: space-evenly;
     padding-top: 15rem;
     background-color: #ecf2f2;
-​
+
     h1 {
       font-size: 3rem;
     }
-​
+
     .wave {
       position: absolute;
       top: -1px;
       transform: rotate(180deg);
     }
-​
+
     &__flex {
       flex-grow: 1;
       display: flex;
@@ -436,13 +437,13 @@ body {
     filter: grayscale(0%);
   }
 }
-​
+
 .footer {
   width: 100%;
   display: flex;
   flex-direction: row;
   padding: 2rem 2rem;
-
+  
   &__map {
     min-height: 100%;
     width: 50%;
