@@ -56,6 +56,8 @@ const navDrop = () => {
 };
 navDrop();
 
+
+
 const MediaHeaderFix = (navLogo, h1) => { };
 
 const navSlide = () => {
@@ -86,7 +88,6 @@ const navSlide = () => {
   });
 };
 navSlide();
-
 
 function initMap() {
   const myLatLng = { lat: 56.015750, lng: 12.732105 };
