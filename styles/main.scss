@@ -11,7 +11,7 @@ $steel-blue: #5f78b0;
 %CardLayout {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 120%;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
@@ -118,10 +118,11 @@ body {
     background-color: #ecf2f2;
     margin-bottom: 100px;
     position: relative;
+    overflow: hidden;
 
     &__image {
       width: 100%;
-      height: 100%;
+      height: 120%;
     }
     svg {
       position: absolute;
@@ -146,7 +147,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       margin: 0;
-      color: $steel-blue;
+      color: #0072ce;
 
       span {
         color: $fade-blue;
@@ -249,7 +250,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ecf2f2;
-    background-image: linear-gradient(to top, #009dff 0%, #ecf2f2 100%);
+    background-image: linear-gradient(to top, #0072ce 0%, #ecf2f2 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -283,7 +284,7 @@ body {
     &__divider {
       width: 2px;
       height: 80vh;
-      background-color: lightgray;
+      background-color: black;
     }
 
     &__right {
@@ -315,38 +316,14 @@ body {
     justify-content: space-evenly;
     padding-top: 15rem;
     background-color: #ecf2f2;
-    // background-image: linear-gradient(to top, #ecf2f2 0%, #009dff 100%);
 
-    // .blob {
-    //   width: 10rem;
-    //   height: 10rem;
-    //   position: absolute;
-    // }
-
-    // .nr1 {
-    //   left: -40px;
-    //   top: -150px;
-    // }
-    // .nr2 {
-    //   right: -70px;
-    //   top: 0px;
-    // }
-    // .nr3 {
-    //   top: -100px;
-    //   left: 30%;
-    // }
-    // .nr4 {
-    //   bottom: 40%;
-    //   right: 0;
-    // }
-    // .nr5 {
-    //   top: 50%;
-    //   left: 10px;
-    // }
+    h1 {
+      font-size: 3rem;
+    }
 
     .wave {
       position: absolute;
-      top: 0;
+      top: -1px;
       transform: rotate(180deg);
     }
 
@@ -369,7 +346,7 @@ body {
         box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
           0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
 
-        height: 400px;
+        height: 450px;
 
         display: flex;
         flex-direction: column;
@@ -412,19 +389,28 @@ body {
         &__footer {
           flex: 1 0 60%;
           display: flex;
-          padding: 0px 12px;
+          padding: 30px 12px;
           flex-direction: column;
-          justify-content: flex-end;
+          justify-content: flex-start;
+
+          // h4 {
+          //   font-size: 2rem;
+          // }
         }
       }
     }
   }
-  .map {
+  .section__form {
     position: relative;
     min-height: 70vh;
-    background-image: linear-gradient(to top, #ffffff 0%, #ecf2f2 100%);
+    background-image: linear-gradient(
+      to top,
+      #ffffff 0%,
+      #ffffff 20%,
+      #ecf2f2 100%
+    );
 
-    &__lol {
+    &__svg {
       position: absolute;
       bottom: 0;
     }
@@ -435,31 +421,58 @@ body {
       transform: rotate(180deg);
     }
   }
+
+  &__section__graded {
+    height: 50vh;
+    width: 100%;
+    background-color: red;
+    background-image: linear-gradient(
+        to bottom,
+        #ecf2f2,
+        rgba(0, 114, 206, 0.5)
+      ),
+      url("../assets/printer.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    filter: grayscale(0%);
+  }
 }
 
 .footer {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  padding: 2rem 2rem;
 
-  &__box {
-    padding: 2rem 2rem;
+  &__map {
+    min-height: 100%;
+    width: 50%;
+  }
 
-    h3 {
-      border-bottom: 1px solid black;
-      padding-bottom: 0.725rem;
-      margin-bottom: 0.725rem;
-    }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    &--align {
-      display: flex;
-      align-items: center;
-      margin: 0.2rem 0rem;
+    min-height: 100%;
+    width: 50%;
 
-      svg {
-        margin-right: 0.4rem;
+    &__box {
+      h3 {
+        border-bottom: 1px solid black;
+        padding-bottom: 0.725rem;
+        margin-bottom: 0.725rem;
+      }
+
+      &--align {
+        display: flex;
+        align-items: center;
+        margin: 0.2rem 0rem;
+
+        svg {
+          margin-right: 0.4rem;
+        }
       }
     }
   }
@@ -484,6 +497,7 @@ body {
       align-items: center;
       flex-direction: column;
       padding-bottom: 10rem;
+
       &__left {
         width: 100%;
         height: 20%;
@@ -527,11 +541,26 @@ body {
     &__card {
       width: 100%;
       margin: 1rem 0px;
+
+      &__header {
+        min-height: 60%;
+      }
+
+      &__footer {
+      }
     }
   }
-
   .footer {
     flex-direction: column;
+
+    &__contact {
+      width: 100%;
+    }
+
+    &__map {
+      width: 100%;
+      height: 100vh;
+    }
   }
 }
 

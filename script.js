@@ -56,6 +56,8 @@ const navDrop = () => {
 };
 navDrop();
 
+
+
 const MediaHeaderFix = (navLogo, h1) => {};
 
 const navSlide = () => {
@@ -86,3 +88,16 @@ const navSlide = () => {
   });
 };
 navSlide();
+
+function initMap() {
+  const myLatLng = { lat: 56.015750, lng: 12.732105 };
+
+  let map = new google.maps.Map(document.getElementById("map"), {
+    center: myLatLng,
+    zoom: 15,
+  });
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+  });
+}

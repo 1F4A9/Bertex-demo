@@ -1,7 +1,7 @@
 .main__service__flex__card .card3, .main__service__flex__card .card2, .main__service__flex__card .card1 {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 120%;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
@@ -96,10 +96,11 @@ body {
   background-color: #ecf2f2;
   margin-bottom: 100px;
   position: relative;
+  overflow: hidden;
 }
 .header__intro__image {
   width: 100%;
-  height: 100%;
+  height: 120%;
 }
 .header__intro svg {
   position: absolute;
@@ -123,7 +124,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  color: #5f78b0;
+  color: #0072ce;
 }
 .header__intro h1 span {
   color: #7ca6a0;
@@ -205,7 +206,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ecf2f2;
-  background-image: linear-gradient(to top, #009dff 0%, #ecf2f2 100%);
+  background-image: linear-gradient(to top, #0072ce 0%, #ecf2f2 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -236,7 +237,7 @@ body {
 .main__about__divider {
   width: 2px;
   height: 80vh;
-  background-color: lightgray;
+  background-color: black;
 }
 .main__about__right {
   padding: 0 2rem;
@@ -265,9 +266,12 @@ body {
   padding-top: 15rem;
   background-color: #ecf2f2;
 }
+.main__service h1 {
+  font-size: 3rem;
+}
 .main__service .wave {
   position: absolute;
-  top: 0;
+  top: -1px;
   transform: rotate(180deg);
 }
 .main__service__flex {
@@ -284,7 +288,7 @@ body {
   background-color: #fff;
   border-radius: 6px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-  height: 400px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -317,46 +321,63 @@ body {
 .main__service__flex__card__footer {
   flex: 1 0 60%;
   display: flex;
-  padding: 0px 12px;
+  padding: 30px 12px;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
-.main .map {
+.main .section__form {
   position: relative;
   min-height: 70vh;
-  background-image: linear-gradient(to top, #ffffff 0%, #ecf2f2 100%);
+  background-image: linear-gradient(to top, #ffffff 0%, #ffffff 20%, #ecf2f2 100%);
 }
-.main .map__lol {
+.main .section__form__svg {
   position: absolute;
   bottom: 0;
 }
-.main .map .wave {
+.main .section__form .wave {
   position: absolute;
   top: 0;
   transform: rotate(180deg);
+}
+.main__section__graded {
+  height: 50vh;
+  width: 100%;
+  background-color: red;
+  background-image: linear-gradient(to bottom, #ecf2f2, rgba(0, 114, 206, 0.5)), url("../assets/printer.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  filter: grayscale(0%);
 }
 
 .footer {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
-}
-.footer__box {
   padding: 2rem 2rem;
 }
-.footer__box h3 {
+.footer__map {
+  min-height: 100%;
+  width: 50%;
+}
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  width: 50%;
+}
+.footer__contact__box h3 {
   border-bottom: 1px solid black;
   padding-bottom: 0.725rem;
   margin-bottom: 0.725rem;
 }
-.footer__box--align {
+.footer__contact__box--align {
   display: flex;
   align-items: center;
   margin: 0.2rem 0rem;
 }
-.footer__box--align svg {
+.footer__contact__box--align svg {
   margin-right: 0.4rem;
 }
 
@@ -414,9 +435,18 @@ body {
     width: 100%;
     margin: 1rem 0px;
   }
-
+  .main__service__flex__card__header {
+    min-height: 60%;
+  }
   .footer {
     flex-direction: column;
+  }
+  .footer__contact {
+    width: 100%;
+  }
+  .footer__map {
+    width: 100%;
+    height: 100vh;
   }
 }
 @media screen and (min-width: 1150px) {
