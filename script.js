@@ -11,16 +11,14 @@ const navDrop = () => {
     if (currentScrollPosition > breakpoint * 2) {
       h1.style.display = "none";
       navLogo.style.display = "block";
-      navLogo.style.width = "150px";
-      navLogo.style.height = "50px";
+      navLogo.style.width = "9.4rem";
+      navLogo.style.height = "3.1rem";
       navLogo.style.backgroundImage = "url('./assets/bertex_new.gif')";
       navLogo.style.backgroundSize = "contain";
       navLogo.style.backgroundRepeat = "no-repeat";
       navLogo.style.backgroundPosition = "center";
-      // navLogo.style.backgroundColor = "red";
     } else {
       h1.style.display = "block";
-      // navLogo.style.display = "none";
 
       let maxWidth = 150;
       maxWidth = maxWidth + currentScrollPosition - breakpoint;
@@ -28,11 +26,6 @@ const navDrop = () => {
       if (maxWidth < 151) {
         navLogo.style.width = `calc(${maxWidth}px)`;
       }
-
-      // if (currentScrollPosition + 500 > breakpoint + 500) {
-      //   console.log(currentScrollPosition, currentScrollPosition - 380);
-      //   navLogo.style.width = `${currentScrollPosition - 383}px`;
-      // }
     }
 
     if (previousScrollPostition < currentScrollPosition) {
@@ -58,7 +51,7 @@ navDrop();
 
 
 
-const MediaHeaderFix = (navLogo, h1) => {};
+const MediaHeaderFix = (navLogo, h1) => { };
 
 const navSlide = () => {
   const burger = document.querySelector(".header__nav__mobile__burger");
