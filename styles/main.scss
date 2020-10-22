@@ -1,6 +1,12 @@
-$break-small: 480px;
-$break-medium: 840px;
-$break-large: 81.5rem;
+$root-font-size: 16px;
+
+$break-small: 30em; // 480px
+$break-medium: 52.5em; // 840px
+$break-large: 85em; // 1360px
+$break-xlarge: 120em; // 1920px
+$break-xxlarge: 160em; // 2560px
+$break-xxxlarge: 225em; // 3600px
+
 $dark-blue: #034aa6;
 $medium-blue: #1252a6;
 $light-blue: #a9e3fe;
@@ -32,7 +38,7 @@ body {
 
 .header {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: $background;
 
   &__nav {
@@ -149,6 +155,8 @@ body {
     h1 {
       position: absolute;
       font-weight: 700;
+      // fallback
+      font-size: 4rem;
       font-size: clamp(4rem, 10vw, 8rem);
       top: 50%;
       left: 50%;
@@ -186,7 +194,7 @@ body {
 
     &__li {
       opacity: 0;
-      font-size: 26px;
+      font-size: 1,625rem;
     }
 
     .navLogo {
@@ -285,9 +293,10 @@ body {
       padding: 0 2rem;
 
       h2 {
-        font-size: clamp(6rem, 10vw, 8rem);
+        font-size: 6rem;
         margin: 0;
         padding: 0;
+        text-align: center;
       }
     }
 
@@ -324,7 +333,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 15rem;
+
+    padding-top: 10em; // fallback
+    padding-top: calc(100% * 1/5);
+
     background-color: $background;
 
     h1 {
@@ -529,7 +541,7 @@ body {
         align-items: center;
 
         h2 {
-          font-size: 45px;
+          font-size: 2,8rem;
           margin-bottom: 0.725rem;
         }
       }
@@ -543,10 +555,6 @@ body {
         padding: 0;
         width: 100%;
         height: 60%;
-        // display: flex;
-        // justify-content: center;
-        // flex-direction: column;
-
         p {
           margin: 5px;
         }
@@ -555,10 +563,19 @@ body {
   }
 }
 
+@media screen and (max-width: $break-small) {
+  .header {
+    height: 90vh;
+  }
+  .main__service {
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}
+
 @media screen and (max-width: $break-medium) {
   .main__service {
-    padding-top: 10rem;
-
     &__flex {
       flex-direction: column;
 
@@ -568,9 +585,6 @@ body {
 
         &__header {
           height: 60%;
-        }
-
-        &__footer {
         }
       }
     }
@@ -589,25 +603,36 @@ body {
   }
 }
 
-@media screen and (min-width: 5000px) {
-  html {
-    font-size: 50px;
-  }
+// calc fallback scss mixins
+@mixin fallback($property) {
+  padding-top: $property;
+  padding-top: calc(100% * 1/5);
+}
 
-  .main__about,
-  .main__service__article,
-  .main__service__flex,
-  .footer {
-    margin: 0 auto;
-    width: 4000px;
+@media screen and (min-width: $break-large) {
+  .main__service { @include fallback(15em); }
+}
+
+@media screen and (min-width: $break-xlarge) {
+  .main__service { @include fallback(17em); }
+
+  html {
+    font-size: $root-font-size*1.4;
   }
 }
 
-@media screen and (max-width: $break-small) {
-  .header {
-    height: 90vh;
+@media screen and (min-width: $break-xxlarge) {
+  .main__service { @include fallback(20em); }
+
+  html {
+    font-size: $root-font-size*1.6;
   }
-  .main__service {
-    padding-top: 6rem;
+}
+
+@media screen and (min-width: $break-xxxlarge) {
+  .main__service { @include fallback(25em); }
+
+  html {
+    font-size: $root-font-size*2;
   }
 }
