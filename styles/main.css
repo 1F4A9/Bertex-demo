@@ -14,6 +14,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .header {
@@ -27,12 +28,12 @@ body {
   top: 0;
   width: 100%;
   height: 9vh;
-  z-index: 2;
   transition: top 0.4s;
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  z-index: 5;
 }
 .header__nav__mobile {
   display: none;
@@ -103,6 +104,7 @@ body {
   overflow: hidden;
   background-image: url("../assets/printerComputer.jpg");
   background-position: center;
+  background-size: cover;
 }
 .header__intro svg {
   position: absolute;
@@ -139,7 +141,7 @@ body {
     position: absolute;
     right: 0px;
     height: 50vh;
-    top: 7vh;
+    top: 9vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -270,7 +272,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   padding-top: 10em;
-  padding-top: calc(100% * 1/5);
+  padding-top: calc(100% * 1 / 5);
   background-color: #edebe8;
 }
 .main__service h1 {
@@ -287,7 +289,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   padding: 2rem 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
 }
 .main__service__flex__card {
   flex: 0 0 30%;
@@ -336,18 +338,37 @@ body {
 .main__service__flex__card__footer p:last-child {
   margin: 0;
 }
+.main .divider {
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid lightgray;
+}
 .main .section__form {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 170vh;
   background-image: linear-gradient(to top, #ffffff 0%, #ffffff 20%, #edebe8 100%);
+  padding-top: 7rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+.main .section__form__circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+}
+.main .section__form .left {
+  top: -400px;
+  left: -300px;
+}
+.main .section__form .right {
+  top: -200px;
+  right: -300px;
 }
 .main .section__form__svg {
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
 }
 .main .section__form form {
   width: 90%;
@@ -357,15 +378,17 @@ body {
   flex-direction: column;
 }
 .main .section__form__wrapper {
-  z-index: 9;
+  background-color: #f2f2f2;
+  z-index: 1;
   width: 80%;
-  height: 80%;
+  height: 70%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
+  border-radius: 6px;
+  padding-top: 2rem;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   flex-direction: column;
 }
 .main .section__form__wrapper__item {
@@ -374,7 +397,7 @@ body {
   margin: 5px;
 }
 .main .section__form__wrapper__item:nth-last-child(2) {
-  height: 35%;
+  height: 40%;
 }
 .main .section__form__wrapper__item:nth-last-child(2) textarea {
   resize: none;
@@ -393,9 +416,8 @@ body {
   text-overflow: ellipsis;
   text-transform: uppercase;
   color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-  background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+  background-color: #0072ce;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
   font-size: 1rem;
   font-weight: 500;
   line-height: 36px;
@@ -481,7 +503,6 @@ body {
   color: rgba(0, 0, 0, 0.87);
   background-color: transparent;
   box-shadow: none;
-  font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   caret-color: #2196f3;
@@ -570,16 +591,6 @@ body {
   background-repeat: no-repeat;
   filter: grayscale(0%);
 }
-.main__section__graded {
-  height: 50vh;
-  width: 100%;
-  background-color: red;
-  background-image: linear-gradient(to bottom, #ecf2f2, rgba(0, 114, 206, 0.5)), url("../assets/printer.jpg");
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  filter: grayscale(0%);
-}
 
 .footer {
   width: 100%;
@@ -590,14 +601,14 @@ body {
 }
 .footer__map {
   min-height: 100%;
-  width: 45%;
+  width: 49%;
 }
 .footer__contact {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100%;
-  width: 45%;
+  width: 49%;
 }
 .footer__contact__box h3 {
   border-bottom: 1px solid black;
@@ -668,12 +679,34 @@ body {
   .main__service h1 {
     margin-bottom: 0;
   }
+  .main .section__form {
+    height: 90vh;
+  }
+  .main .section__form__wrapper {
+    min-height: 90%;
+  }
+  .main .section__form__wrapper__item:nth-last-child(2) {
+    height: 35%;
+  }
   .main .section__form__wrapper form {
     width: 100%;
   }
   .main .section__form__wrapper form button {
     width: 100%;
     height: 80%;
+  }
+  .main .section__form__circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+  }
+  .main .section__form .left {
+    top: -200px;
+    left: -140px;
+  }
+  .main .section__form .right {
+    top: -100px;
+    right: -140px;
   }
 }
 @media screen and (max-width: 52.5em) {
@@ -695,20 +728,21 @@ body {
     width: 100%;
   }
   .footer__map {
+    margin-top: 2vh;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
   }
 }
 @media screen and (min-width: 85em) {
   .main__service {
     padding-top: 15em;
-    padding-top: calc(100% * 1/5);
+    padding-top: calc(100% * 1 / 5);
   }
 }
 @media screen and (min-width: 120em) {
   .main__service {
     padding-top: 17em;
-    padding-top: calc(100% * 1/5);
+    padding-top: calc(100% * 1 / 5);
   }
 
   html {
@@ -718,7 +752,7 @@ body {
 @media screen and (min-width: 160em) {
   .main__service {
     padding-top: 20em;
-    padding-top: calc(100% * 1/5);
+    padding-top: calc(100% * 1 / 5);
   }
 
   html {
@@ -728,7 +762,7 @@ body {
 @media screen and (min-width: 225em) {
   .main__service {
     padding-top: 25em;
-    padding-top: calc(100% * 1/5);
+    padding-top: calc(100% * 1 / 5);
   }
 
   html {

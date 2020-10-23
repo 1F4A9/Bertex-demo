@@ -34,6 +34,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .header {
@@ -47,12 +48,12 @@ body {
     top: 0;
     width: 100%;
     height: 9vh;
-    z-index: 2;
     transition: top 0.4s;
     background-color: rgba($color: #fff, $alpha: 0.9);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    z-index: 5;
 
     &__mobile {
       display: none;
@@ -132,6 +133,7 @@ body {
     overflow: hidden;
     background-image: url("../assets/printerComputer.jpg");
     background-position: center;
+    background-size: cover;
 
     // &__image {
     //   width: 100%;
@@ -178,7 +180,7 @@ body {
       position: absolute;
       right: 0px;
       height: 50vh;
-      top: 7vh;
+      top: 9vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -194,7 +196,7 @@ body {
 
     &__li {
       opacity: 0;
-      font-size: 1,625rem;
+      font-size: 1, 625rem;
     }
 
     .navLogo {
@@ -335,7 +337,7 @@ body {
     justify-content: space-evenly;
 
     padding-top: 10em; // fallback
-    padding-top: calc(100% * 1/5);
+    padding-top: calc(100% * 1 / 5);
 
     background-color: $background;
 
@@ -356,7 +358,7 @@ body {
       align-items: center;
 
       padding: 2rem 2rem;
-      padding-bottom: 5rem;
+      padding-bottom: 7rem;
 
       &__card {
         flex: 0 0 30%;
@@ -366,7 +368,7 @@ body {
         // padding: 0px 12px;
 
         box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
-        0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+          0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
 
         height: 30rem;
 
@@ -423,10 +425,16 @@ body {
       }
     }
   }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid lightgray;
+  }
   .section__form {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 170vh;
     // background-color: green;
     background-image: linear-gradient(
       to top,
@@ -434,13 +442,30 @@ body {
       #ffffff 20%,
       $background 100%
     );
+    padding-top: 7rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+
+    &__circle {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+    }
+
+    .left {
+      top: -400px;
+      left: -300px;
+    }
+
+    .right {
+      top: -200px;
+      right: -300px;
+    }
 
     &__svg {
       position: absolute;
-      bottom: -1px;
+      bottom: 0px;
     }
 
     form {
@@ -453,16 +478,19 @@ body {
     }
 
     &__wrapper {
-      // background-color: #c2e2f8;
-      z-index: 9;
+      background-color: #f2f2f2;
+      z-index: 1;
       width: 80%;
-      height: 80%;
+      height: 70%;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
+      border-radius: 6px;
+      padding-top: 2rem;
+      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+
       flex-direction: column;
 
       &__item {
@@ -472,7 +500,7 @@ body {
         margin: 5px;
 
         &:nth-last-child(2) {
-          height: 35%;
+          height: 40%;
           textarea {
             resize: none;
           }
@@ -494,17 +522,10 @@ body {
           text-overflow: ellipsis;
           text-transform: uppercase;
           color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-          background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+          background-color: #0072ce;
           box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
             0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-          font-family: var(
-            --pure-material-font,
-            "Roboto",
-            "Segoe UI",
-            BlinkMacSystemFont,
-            system-ui,
-            -apple-system
-          );
+
           font-size: 1rem;
           font-weight: 500;
           line-height: 36px;
@@ -605,7 +626,7 @@ body {
             color: rgba(0, 0, 0, 0.87);
             background-color: transparent;
             box-shadow: none;
-            font-family: inherit;
+
             font-size: inherit;
             line-height: inherit;
             caret-color: rgb(33, 150, 243);
@@ -739,22 +760,6 @@ body {
     background-repeat: no-repeat;
     filter: grayscale(0%);
   }
-
-  &__section__graded {
-    height: 50vh;
-    width: 100%;
-    background-color: red;
-    background-image: linear-gradient(
-        to bottom,
-        #ecf2f2,
-        rgba(0, 114, 206, 0.5)
-      ),
-      url("../assets/printer.jpg");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    filter: grayscale(0%);
-  }
 }
 
 .footer {
@@ -766,7 +771,7 @@ body {
 
   &__map {
     min-height: 100%;
-    width: 45%;
+    width: 49%;
   }
 
   &__contact {
@@ -775,7 +780,7 @@ body {
     justify-content: space-between;
 
     min-height: 100%;
-    width: 45%;
+    width: 49%;
 
     &__box {
       h3 {
@@ -828,7 +833,7 @@ body {
         align-items: center;
 
         h2 {
-          font-size: 2,8rem;
+          font-size: 2, 8rem;
           margin-bottom: 0.725rem;
         }
       }
@@ -856,11 +861,22 @@ body {
   }
   .main {
     &__service {
-      h1 { margin-bottom: 0; }
+      h1 {
+        margin-bottom: 0;
+      }
     }
 
     .section__form {
+      height: 90vh;
+
       &__wrapper {
+        min-height: 90%;
+        &__item {
+          &:nth-last-child(2) {
+            height: 35%;
+          }
+        }
+
         form {
           width: 100%;
           button {
@@ -869,19 +885,33 @@ body {
           }
         }
       }
+      &__circle {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+      }
+
+      .left {
+        top: -200px;
+        left: -140px;
+      }
+
+      .right {
+        top: -100px;
+        right: -140px;
+      }
     }
   }
 }
-
 
 @media screen and (max-width: $break-medium) {
   .main__service {
     &__flex {
       flex-direction: column;
 
-        &__card {
-          width: 100%;
-          margin: 1rem 0px;
+      &__card {
+        width: 100%;
+        margin: 1rem 0px;
 
         &__header {
           height: 60%;
@@ -897,8 +927,9 @@ body {
     }
 
     &__map {
+      margin-top: 2vh;
       width: 100%;
-      height: 100vh;
+      height: 80vh;
     }
   }
 }
@@ -906,33 +937,41 @@ body {
 // calc fallback scss mixins
 @mixin fallback($property) {
   padding-top: $property;
-  padding-top: calc(100% * 1/5);
+  padding-top: calc(100% * 1 / 5);
 }
 
 @media screen and (min-width: $break-large) {
-  .main__service { @include fallback(15em); }
+  .main__service {
+    @include fallback(15em);
+  }
 }
 
 @media screen and (min-width: $break-xlarge) {
-  .main__service { @include fallback(17em); }
+  .main__service {
+    @include fallback(17em);
+  }
 
   html {
-    font-size: $root-font-size*1.4;
+    font-size: $root-font-size * 1.4;
   }
 }
 
 @media screen and (min-width: $break-xxlarge) {
-  .main__service { @include fallback(20em); }
+  .main__service {
+    @include fallback(20em);
+  }
 
   html {
-    font-size: $root-font-size*1.6;
+    font-size: $root-font-size * 1.6;
   }
 }
 
 @media screen and (min-width: $break-xxxlarge) {
-  .main__service { @include fallback(25em); }
+  .main__service {
+    @include fallback(25em);
+  }
 
   html {
-    font-size: $root-font-size*2;
+    font-size: $root-font-size * 2;
   }
 }
